@@ -1,0 +1,58 @@
+---
+title: "Session Info"
+format: 
+  html: default
+  pdf:
+    keep-tex: true
+---
+
+# Session info
+
+Print session info
+
+```{r}
+#| eval: false
+sessionInfo()
+```
+
+Store session info
+```{r}
+my_sesh <- sessionInfo()
+```
+
+Save as RDS
+
+```{r}
+#| eval: false
+saveRDS(my_sesh, here::here("scripts", "session_info_sessionInfo.rds"))
+```
+
+```{r}
+old_sesh <- readRDS(here::here("scripts", "session_info_sessionInfo.rds"))
+```
+
+# Load packages
+
+```{r}
+library(dplyr)
+```
+
+# LaTex
+
+```{markdown}
+---
+title: "Session Info"
+format: 
+  html: default
+  pdf:
+    keep-tex: true # this is what you need
+---
+```
+
+
+# Session Info 
+
+```{r}
+sessionInfo()
+```
+
