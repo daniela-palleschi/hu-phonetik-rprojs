@@ -101,50 +101,39 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={latex},
+  pdftitle={R markdown to LaTeX},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{latex}
+\title{R markdown to LaTeX}
 \author{}
 \date{\vspace{-2.5em}2024-09-25}
 
 \begin{document}
 \maketitle
 
-\subsection{R Markdown}\label{r-markdown}
+\section{\texorpdfstring{\texttt{keep\_tex:\ true}}{keep\_tex: true}}\label{keep_tex-true}
 
-This is an R Markdown document. Markdown is a simple formatting syntax
-for authoring HTML, PDF, and MS Word documents. For more details on
-using R Markdown see \url{http://rmarkdown.rstudio.com}.
-
-When you click the \textbf{Knit} button a document will be generated
-that includes both content as well as the output of any embedded R code
-chunks within the document. You can embed an R code chunk like this:
+In your YAML, use \texttt{keep\_tex:\ true} as a setting for
+\texttt{pdf\_document:}. N.B., in Quarto, the syntax is
+\texttt{keep-tex:\ true} (underscore instead of hyphen).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{summary}\NormalTok{(cars)}
+\CommentTok{{-}{-}{-}}
+\AnnotationTok{title:}\CommentTok{ "R markdown to LaTeX"}
+\AnnotationTok{output:}\CommentTok{ }
+\CommentTok{  pdf\_document:}
+\CommentTok{    keep\_tex: true \# this is what you need}
+\CommentTok{{-}{-}{-}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-\end{verbatim}
-
-\subsection{Including Plots}\label{including-plots}
-
-You can also embed plots, for example:
-
-\includegraphics{rmd-to-latex_files/figure-latex/pressure-1.pdf}
-
-Note that the \texttt{echo\ =\ FALSE} parameter was added to the code
-chunk to prevent printing of the R code that generated the plot.
+Then when you render a PDF, a \texttt{.tex} file will appear in the same
+folder as your script. You can simply upload this file to Overleaf (or
+read it in wherever else you write your LaTeX papers) or copy-and-paste
+the tex code. If the document also produces/prints figures, you can also
+just upload/copy-and-paste the folder that ends in \texttt{\_files} to
+wherever your LaTeX document is rendered.
 
 \end{document}

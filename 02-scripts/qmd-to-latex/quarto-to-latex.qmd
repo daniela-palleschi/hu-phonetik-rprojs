@@ -1,0 +1,29 @@
+---
+title: "Quarto to LaTeX"
+author: "Daniela Palleschi"
+date: "09/25/2024"
+date-format: "ddd. MMM D, YYYY"
+format: 
+  html:
+    code-tools: true # so that you can see the code when viewing the HTML ('</> Code' button)
+  pdf:
+    keep-tex: true
+---
+
+# `keep-tex: true`
+
+In your YAML, use `keep-tex: true` as a setting for `pdf:`. N.B., in R markdown, the syntax is `keep_tex: true` (underscore instead of hyphen).
+
+```{r}
+#| eval: false
+---
+title: "Session Info"
+format: 
+  html: default
+  pdf:
+    keep-tex: true # this is what you need
+---
+```
+
+Then when you render a PDF, a `.tex` file will appear in the same folder as your script. You can simply upload this file to Overleaf (or read it in wherever else you write your LaTeX papers) or copy-and-paste the tex code. If the document also produces/prints figures, you can also just upload/copy-and-paste the folder that ends in `_files` to wherever your LaTeX document is rendered.
+

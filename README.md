@@ -1,2 +1,8 @@
 # hu-phonetik-rprojs
-Materials from a 2-hour workshop on RProjects/reproducibility for the Phonetics group at the Humboldt-Universität zu Berlin
+
+Materials from live coding during a 2-hour workshop on RProjects/reproducibility for the Phonetics group at the Humboldt-Universität zu Berlin
+
+Useful links:
+
+  - intro to Quarto: [https://daniela-palleschi.github.io/r4ling/mats/03-quarto_1.html](https://daniela-palleschi.github.io/r4ling/mats/03-quarto_1.html)
+  - 4-day workshop on reproducibility: [https://daniela-palleschi.github.io/SSOL24-reproducibility-workshop/](https://daniela-palleschi.github.io/SSOL24-reproducibility-workshop/)

@@ -1,0 +1,62 @@
+---
+title: "Session Info"
+author: "Daniela Palleschi"
+date: "09/25/2024"
+date-format: "ddd. MMM D, YYYY"
+format: 
+  html:
+    code-tools: true # so that you can see the code when viewing the HTML ('</> Code' button)
+  pdf: default # set to 'default' when you don't set any specifications
+---
+
+# Set-up {-}
+
+Packages needed for this script:
+
+```{r}
+# packages
+library(here)
+```
+
+
+# Session info
+
+The `sessionInfo()` function provides information on the R-version, operating system, and attached or loaded packages used at the time of running the function. You should run it at the bottom/end of *every* script in order to document which R-version and packages/package versions were used at the time of running the script.
+
+## Print session info
+
+Print session info; always do this at the every end of your script to make sure you capture any packages that get loaded in the script. When you render/knit your Quarto/Rmarkdown script (e.g., to html or PDF) the session information will be printed.
+
+```{r}
+#| eval: false
+sessionInfo()
+```
+
+## Save session info locally
+
+Or you can store session info, for example if you're using an R script.
+
+```{r}
+my_sesh <- sessionInfo()
+```
+
+Then you can save as the stored session info as an RDS file. Make sure to name/store the RDS file so that you know to which script it belongs. I also recommend setting `eval: false` (Quarto) or `eval = FALSE` (Rmarkdown) when saving objects locally so that they don't get saved when you render/knit your document
+
+```{r}
+#| echo: fenced
+#| eval: false
+saveRDS(my_sesh, here("02-scripts", "session-info", "session_info-sessionInfo.rds"))
+```
+
+Then you can load in the session info RDS file and print it if you like (but this would only really make sense if the original script didn't include a print-out of the session info, e.g., an R script).
+
+```{r}
+old_sesh <- readRDS(here("02-scripts", "session-info", "session_info-sessionInfo.rds"))
+```
+
+# Session Info 
+
+```{r}
+sessionInfo()
+```
+

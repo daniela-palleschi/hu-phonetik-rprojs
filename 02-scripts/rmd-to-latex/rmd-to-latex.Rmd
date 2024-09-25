@@ -1,31 +1,24 @@
 ---
-title: "latex"
+title: "R markdown to LaTeX"
 output: 
   pdf_document:
     keep_tex: true
 date: "2024-09-25"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+
+# `keep_tex: true`
+
+In your YAML, use `keep_tex: true` as a setting for `pdf_document:`. N.B., in Quarto, the syntax is `keep-tex: true` (underscore instead of hyphen).
+
+```{markdown}
+---
+title: "R markdown to LaTeX"
+output: 
+  pdf_document:
+    keep_tex: true # this is what you need
+---
 ```
 
-## R Markdown
+Then when you render a PDF, a `.tex` file will appear in the same folder as your script. You can simply upload this file to Overleaf (or read it in wherever else you write your LaTeX papers) or copy-and-paste the tex code. If the document also produces/prints figures, you can also just upload/copy-and-paste the folder that ends in `_files` to wherever your LaTeX document is rendered.
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
